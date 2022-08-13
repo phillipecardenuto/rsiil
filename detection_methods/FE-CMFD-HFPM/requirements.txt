@@ -1,0 +1,8 @@
+# Install with conda
+# conda install -c conda-forge cyvlfeat
+scikit-image
+opencv-contrib-python==4.3.0.38
+numpy
+matplotlib
+scipy
+
