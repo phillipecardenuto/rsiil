@@ -12,8 +12,7 @@ The library  implements the most type image tampering functions.
 2. Retouching 
 3. Cleaning
 
-This [notebook](https://github.com/phillipecardenuto/rsiil/blob/repo-org/notebooks/Tampering-Simple-Scientific-Figures.ipynb) explains how to apply each type of forgery in a scientific image
-
+This [notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Simple-Scientific-Figures.ipynb) explains how to apply each type of forgery in a scientific image
 
 
 The library also mimics the behavior of images placed in scientific documents, such as compound figures -- with indicative letters and graphs.
@@ -22,17 +21,17 @@ There is two possible types of forgeries for compound figures:
 
 1. Intra-panel (forgeries that are isolated within a single panel from the compound figure)
 
-   [Notebook](https://github.com/phillipecardenuto/rsiil/blob/repo-org/notebooks/Tampering-Compound-Intra-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
+   [Notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Intra-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
 
 2. Inter-panel (forgeries that involve more than one panel of the figure):
 
-   [Notebook](https://github.com/phillipecardenuto/rsiil/blob/repo-org/notebooks/Tampering-Compound-Inter-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
+   [Notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Inter-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
 
 
 
 **Requirements:**
 
-To run the notebooks, make sure to install python3.8 and the modules from included in the [requirements.txt](https://github.com/phillipecardenuto/rsiil/blob/repo-org/requirements.txt) .
+To run the notebooks, make sure to install python3.8 and the modules from included in the [requirements.txt](https://github.com/phillipecardenuto/rsiil/blob/main/requirements.txt) .
 
 
 
@@ -40,7 +39,7 @@ To run the notebooks, make sure to install python3.8 and the modules from includ
 
 Using the implemented library, we created a synthetic dataset dedicated for forensic purpose of scientific images.
 
-![rsiid](https://github.com/phillipecardenuto/rsiil/blob/repo-org/.figs/rsiid.jpg)
+![rsiid](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/rsiid.jpg)
 
 *Dataset*:
 
@@ -64,11 +63,11 @@ Both train and test set have simple and compound figures, organized with the fol
 
 **Simple Images**
 
-![](https://github.com/phillipecardenuto/rsiil/blob/repo-org/.figs/simple-data.jpg)
+![](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/simple-data.jpg)
 
 **Compound figure**
 
-![](https://github.com/phillipecardenuto/rsiil/blob/repo-org/.figs/compound-data.jpg)
+![](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/compound-data.jpg)
 
 
 
