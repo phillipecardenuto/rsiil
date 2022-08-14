@@ -1,0 +1,10 @@
+#Using python 3.8.12
+
+numpy
+opencv-contrib-python==4.3.0.38
+Pillow
+tqdm
+pandas==1.3.5
+scikit-image==0.19.1
+imagededup==0.2.2 
+matplotlib==3.4.3

@@ -1,0 +1,142 @@
+/*
+	Copyright(c) 2011 Vincent Christlein <vincent.christlein@cs.fau.de>.
+
+	This file may be licensed under the terms of of the GNU General Public
+	License, version 3, as published by the Free Software Foundation. You can
+	find it here: http://www.gnu.org/licenses/gpl.html
+*/
+
+#include "wavelet.h"
+#include "highgui.h"
+#include <iostream>
+void Wavelet :: subband(const cv::Mat_<uchar> &img, std::vector<cv::Mat_<double> > &dest, 
+		const cv::Mat_<double>  &maska, const cv::Mat_<double>  &maskb)
+{
+	// convolve image
+	cv::Mat_<double> out;
+	cv::Mat_<double> imgdouble = img;
+	cv::sepFilter2D( imgdouble, out, -1, maska, maskb);
+
+	// do I need this? /= (2*sqrt(0.5);
+	//out /= (cv::sum(maska)[0] + cv::sum(maskb)[0]);
+
+	// scale image
+	cv::Mat_<double> scaled;
+	cv::resize(out, scaled, cv::Size(), 0.5, 0.5, cv::INTER_NEAREST);
+
+	dest.push_back(scaled);
+}
+
+void Wavelet :: decompose(const cv::Mat &img, std::vector<std::vector<cv::Mat_<double> > > &dest, 
+		const cv::Mat_<double>  &high, const cv::Mat_<double>  &low, int n)
+{
+	if (img.empty()) 
+		return;
+	
+	std::vector<cv::Mat> planes;
+	cv::split(img, planes);
+
+	dest.resize(planes.size());
+	for (unsigned int c = 0; c < planes.size(); c++){
+
+		cv::Mat_<uchar>  band = planes[c];
+		for (int i = 0; i < n; i++) {
+			subband(band, dest[c], high, high);
+			subband(band, dest[c], low,  high);
+			subband(band, dest[c], high, low);
+			subband(band, dest[c], low,  low);
+
+			band = dest[c].back();
+
+			/* forget the last subband of every level (the low-low filtered one),
+			 * only keep the the one of the last level (rest) */ 
+			if (i < n - 1) {
+				dest[c].pop_back();
+			}
+		}
+	}
+}
+
+void Wavelet :: decompose(const cv::Mat &img, cv::Mat &destimg,
+		const cv::Mat_<double>  &high, const cv::Mat_<double>  &low, int n)
+{
+	std::vector<std::vector<cv::Mat_<double> > > vec;
+	decompose(img, vec, high, low, n);
+	
+	std::vector<cv::Mat> planes;
+	planes.resize(img.channels());
+
+	for (int i = 0; i < img.channels(); i++){
+		cv::Mat_<double> tmp = vec[i].back();
+	
+		//normalize
+		double max;
+		double min;
+		cv::minMaxLoc(tmp, &min, &max);
+		tmp -= min; // move min to 0
+		tmp *= (255 / (max - min)); // scale  to 0-255
+
+		vec[i].pop_back();
+		rek(vec[i], tmp);
+
+		cv::Mat_<uchar> uu = tmp; // cast to uchar
+
+		planes[i] = uu;
+	}
+
+	cv::merge(planes, destimg); // make an image again
+}
+
+void Wavelet :: rek(std::vector<cv::Mat_<double> > &vec, cv::Mat_<double> &m)
+{
+	if (vec.empty()) // recursion end
+		return;
+
+	cv::Mat_<double> a(m.rows * 2, m.cols*2);
+
+	// normalize
+	cv::Mat_<double> tmp;
+	for (int i = 0; i < 3; i++){
+		tmp = vec[vec.size() - (i+1)];
+		double max;
+		double min;
+		cv::minMaxLoc(tmp, &min, &max);
+		tmp -= min; // move min to 0
+		tmp *= (255 / (max - min)); // scale  to 0-255
+	}
+
+	for (int j = 0; j < m.rows; j++){
+		for (int i = 0; i < m.cols; i++){
+			a(j, i) = m(j,i);
+			a(j, m.cols + i ) = vec[vec.size()-1](j,i);
+			a(m.rows + j, i) = vec[vec.size()-2](j,i);
+			a(m.rows + j, m.cols + i) =vec[vec.size()-3](j,i);
+		}
+	}
+
+	vec.erase(vec.end() - 3, vec.end());
+	m = a;
+	rek(vec, m);
+}
+
+void Wavelet :: decomposeHaar(const cv::Mat &img, cv::Mat &destimg, int n)
+{
+		/* setup high- and low-pass filters */
+		cv::Mat_<double> high(1,2, sqrt(0.5));
+		high(0,1) *= -1;
+		cv::Mat_<double> low(1,2, sqrt(0.5));
+		
+		decompose(img, destimg, high, low, n);
+}
+
+void Wavelet :: decomposeHaar(const cv::Mat &img, std::vector<std::vector<cv::Mat_<double> > >  &dest, int n)
+{
+		/* setup high- and low-pass filters */
+		cv::Mat_<double> high(1,2, sqrt(0.5));
+		high(0,1) *= -1;
+		cv::Mat_<double> low(1,2, sqrt(0.5));
+
+		decompose(img, dest, high, low, n);
+}
+
+
