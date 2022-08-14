@@ -23,7 +23,7 @@ There is two possible types of forgeries for compound figures:
 
    [Notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Intra-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
 
-2. Inter-panel (forgeries that involve more than one panel of the figure):
+2. Inter-panel (forgeries that involve more than one figure panel):
 
    [Notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Inter-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
 
