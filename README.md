@@ -1,23 +1,26 @@
 # Recod.ai Scientific Image Integrity Library
 
-A collection of algorithms to synthetically create scientific image for forensics and integrity analysis.
+A collection of algorithms to synthetically create scientific images for forensics and integrity analysis.
+
+An in-depth explanation of each algorithm and dataset is described in our research work:
+[Benchmarking Scientific Image Forgery Detectors](https://link.springer.com/article/10.1007/s11948-022-00391-4)
 
 
 
 ## Library
 
-The library  implements the most type image tampering functions.
+The library implements the most type of image tampering functions.
 
 1. Image Duplication
 2. Retouching 
 3. Cleaning
 
-This [notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Simple-Scientific-Figures.ipynb) explains how to apply each type of forgery in a scientific image
+This [notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Simple-Scientific-Figures.ipynb) explains how to apply each type of forgery in a scientific image.
 
 
 The library also mimics the behavior of images placed in scientific documents, such as compound figures -- with indicative letters and graphs.
 
-There is two possible types of forgeries for compound figures:
+There are two possible types of forgeries for compound figures:
 
 1. Intra-panel (forgeries that are isolated within a single panel from the compound figure)
 
@@ -31,13 +34,13 @@ There is two possible types of forgeries for compound figures:
 
 **Requirements:**
 
-To run the notebooks, make sure to install python3.8 and the modules from included in the [requirements.txt](https://github.com/phillipecardenuto/rsiil/blob/main/requirements.txt) .
+To run the notebooks, make sure to install python3.8 and the modules included in the [requirements.txt](https://github.com/phillipecardenuto/rsiil/blob/main/requirements.txt).
 
 
 
 # Recod.ai Scientific Image Integrity Dataset
 
-Using the implemented library, we created a synthetic dataset dedicated for forensic purpose of scientific images.
+Using the implemented library, we created a synthetic dataset dedicated to forensics purposes and scientific integrity.
 
 ![rsiid](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/rsiid.jpg)
 
@@ -59,7 +62,7 @@ Using the implemented library, we created a synthetic dataset dedicated for fore
 
 ## Dataset Organization
 
-Both train and test set have simple and compound figures, organized with the following schematic:
+Both train and test sets have simple and compound figures, organized with the following schematic:
 
 **Simple Images**
 
@@ -75,9 +78,9 @@ Both train and test set have simple and compound figures, organized with the fol
 
 ### Citation
 
-The dataset is distributed under [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.en)
+The dataset is distributed under the [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.en) license.
 
-If you use any of this content for research purpose, please cite:
+If you use any content from this repository, please cite:
 
 ```tex
  @article{cardenuto_2022, 
