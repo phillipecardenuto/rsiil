@@ -43,7 +43,7 @@ docker pull phillipecardenuto/cmfd:fd
 
 ## Detection
 
-Check the [Detection Notebook](../Notebooks/Detection.ipynb) to see same examples of detection using these dockers.
+Check the [Detection Notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Detection.ipynb) to see same examples of detection using these dockers.
 
 
 
