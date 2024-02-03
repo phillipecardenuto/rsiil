@@ -46,17 +46,17 @@ Using the implemented library, we created a synthetic dataset dedicated to foren
 
 *Dataset*:
 
-[Train set](https://drive.google.com/file/d/1ueRs8ySiFCFEcsIiB3X6KiQcd2aVBMbj/view?usp=sharing)
+[Train set](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/trainset.zip)
 
-[Test set](https://drive.google.com/file/d/1E3HHXSbjIMnfiFK9XxSvSRa6RcUw2-SD/view?usp=sharing)
+[Test set](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/testset.zip)
 
 
 
 *Source figures* and *compound figure templates* used to create the tampering dataset:
 
-[Source Figures]( https://drive.google.com/file/d/1l5RdipKFm_bnDxSwRYwJVG2NUYij7T3w/view?usp=sharinG)
+[Source Figures](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/artificial_forgery_src_data.zip)
 
-[Templates](https://drive.google.com/file/d/11DXW_yFEZsje0aJyZDGaT4cJwwz2Dmzt/view?usp=sharinG)
+[Templates](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/template.zip)
 
 
 
