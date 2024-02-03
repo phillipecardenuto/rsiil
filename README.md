@@ -44,7 +44,7 @@ Using the implemented library, we created a synthetic dataset dedicated to foren
 
 ![rsiid](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/rsiid.jpg)
 
-*Dataset*:
+*[RSIID](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/) Dataset*:
 
 [Train set](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/trainset.zip)
 
