@@ -50,6 +50,12 @@ Using the implemented library, we created a synthetic dataset dedicated to foren
 
 [Test set](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/testset.zip)
 
+If you are facing issues while downloading or accessing these files, try:
+```bash
+curl -k https://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/trainset.zip --output trainset.zip
+curl -k https://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/testset.zip --output testset.zip
+```
+
 
 
 *Source figures* and *compound figure templates* used to create the tampering dataset:
