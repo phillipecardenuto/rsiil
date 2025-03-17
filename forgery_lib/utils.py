@@ -271,7 +271,7 @@ def _select_random_objs(obj_map, n_objs=1, remove_obj_border=True):
 
     # Randomly selects some objects
     obj_id = []
-    ids = list(np.arange(1,total_obj))
+    ids = list(np.arange(1,total_obj+1))
     while len(obj_id) < total_obj and len(obj_id) < n_objs and len(ids) > 0:
         selected_id = np.random.choice(ids)
         obj_id.append(selected_id)
