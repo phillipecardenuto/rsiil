@@ -1,83 +1,57 @@
-# Recod.ai Scientific Image Integrity Library
+# Recod.ai Scientific Image Integrity Library (RSIIL)
 
 A collection of algorithms to synthetically create scientific images for forensics and integrity analysis.
 
-An in-depth explanation of each algorithm and dataset is described in our research work:
-[Benchmarking Scientific Image Forgery Detectors](https://link.springer.com/article/10.1007/s11948-022-00391-4)
+## Research Publication
 
+For an in-depth explanation of the algorithms and dataset, please refer to our research paper:
+* **Benchmarking Scientific Image Forgery Detectors:** [https://link.springer.com/article/10.1007/s11948-022-00391-4](https://link.springer.com/article/10.1007/s11948-022-00391-4)
 
+## Scientific Image Tampering Library
 
-## Library
+The library implements various image tampering functions commonly found in scientific image manipulation:
 
-The library implements the most type of image tampering functions.
+1.  **Image Duplication**
+2.  **Retouching**
+3.  **Cleaning**
 
-1. Image Duplication
-2. Retouching 
-3. Cleaning
+* **Notebook:** [Tampering Simple Scientific Figures](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Simple-Scientific-Figures.ipynb) - Demonstrates how to apply each type of forgery.
 
-This [notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Simple-Scientific-Figures.ipynb) explains how to apply each type of forgery in a scientific image.
+The library also supports the creation of compound figures, mimicking the structure of images in scientific documents. Compound figures can have two types of forgeries:
 
+1.  **Intra-panel Forgeries:** Forgeries within a single panel.
+    * **Notebook:** [Tampering Compound Intra-Panel Scientific Figures](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Intra-Panel-Scientific-Figures.ipynb)
+2.  **Inter-panel Forgeries:** Forgeries involving multiple panels.
+    * **Notebook:** [Tampering Compound Inter-Panel Scientific Figures](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Inter-Panel-Scientific-Figures.ipynb)
 
-The library also mimics the behavior of images placed in scientific documents, such as compound figures -- with indicative letters and graphs.
+**Requirements**
 
-There are two possible types of forgeries for compound figures:
+* Python 3.8
+* Install the required modules from [requirements.txt](https://github.com/phillipecardenuto/rsiil/blob/main/requirements.txt).
 
-1. Intra-panel (forgeries that are isolated within a single panel from the compound figure)
+# Recod.ai Scientific Image Integrity Dataset (RSIID)
 
-   [Notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Intra-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
+This dataset, created using the library, is designed for forensics and scientific integrity research.
 
-2. Inter-panel (forgeries that involve more than one figure panel):
+<div style="text-align: center;">
+  <img src="https://github.com/phillipecardenuto/rsiil/blob/main/.figs/rsiid.jpg" width="400">
+</div>
 
-   [Notebook](https://github.com/phillipecardenuto/rsiil/blob/main/notebooks/Tampering-Compound-Inter-Panel-Scientific-Figures.ipynb) explaining each type of implemented forgery
-
-
-
-**Requirements:**
-
-To run the notebooks, make sure to install python3.8 and the modules included in the [requirements.txt](https://github.com/phillipecardenuto/rsiil/blob/main/requirements.txt).
-
-
-
-# Recod.ai Scientific Image Integrity Dataset
-
-Using the implemented library, we created a synthetic dataset dedicated to forensics purposes and scientific integrity.
-
-![rsiid](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/rsiid.jpg)
-
-*[RSIID](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/) Dataset*:
-
-[Train set](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/trainset.zip)
-
-[Test set](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/testset.zip)
-
-If you are facing issues while downloading or accessing these files, try:
-```bash
-curl -k https://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/trainset.zip --output trainset.zip
-curl -k https://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/testset.zip --output testset.zip
-```
-
-
-
-*Source figures* and *compound figure templates* used to create the tampering dataset:
-
-[Source Figures](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/artificial_forgery_src_data.zip)
-
-[Templates](http://intranet.recod.ic.unicamp.br/~jcardenuto/pub/rsiid/template.zip)
-
+* **Dataset Link (Zenodo):** [https://zenodo.org/records/15095089](https://zenodo.org/records/15095089) - Contains all images, metadata, and related files.
 
 
 ## Dataset Organization
 
-Both train and test sets have simple and compound figures, organized with the following schematic:
+The dataset includes both simple and compound figures in the training and testing sets.
 
 **Simple Images**
 
-![](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/simple-data.jpg)
+<img src="https://github.com/phillipecardenuto/rsiil/blob/main/.figs/simple-data.jpg" width="400">
+
 
 **Compound figure**
 
-![](https://github.com/phillipecardenuto/rsiil/blob/main/.figs/compound-data.jpg)
-
+<img src="https://github.com/phillipecardenuto/rsiil/blob/main/.figs/compound-data.jpg" width="400">
 
 
 
