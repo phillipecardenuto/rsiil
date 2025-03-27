@@ -5,7 +5,7 @@ A collection of algorithms to synthetically create scientific images for forensi
 ## Research Publication
 
 For an in-depth explanation of the algorithms and dataset, please refer to our research paper:
-* **Benchmarking Scientific Image Forgery Detectors:** [https://link.springer.com/article/10.1007/s11948-022-00391-4](https://link.springer.com/article/10.1007/s11948-022-00391-4)
+**Benchmarking Scientific Image Forgery Detectors:** [https://link.springer.com/article/10.1007/s11948-022-00391-4](https://link.springer.com/article/10.1007/s11948-022-00391-4)
 
 ## Scientific Image Tampering Library
 
